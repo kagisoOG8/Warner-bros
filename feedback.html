@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Warner Bros - Feedback</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="sub-header">
+        <nav>
+            <a href="index.html"><img src="images/logo.png" width="50" alt="Warner Bros Logo"></a>
+            <div class="nav-links">
+                <ul>
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="movies.html">MOVIES</a></li>
+                    <li><a href="tvshows.html">TV SHOWS</a></li>
+                    <li><a href="games&apps.html">GAMES & APPS</a></li>
+                    <li><a href="feedback.html">FEEDBACK</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <section class="feedback-section">
+        <div class="container">
+            <h2>Feedback</h2>
+            <form id="feedbackForm" action="submit_feedback.php" method="post" onsubmit="return handleSubmit()">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="4" required></textarea>
+                </div>
+                <button type="submit" id="submitBtn">Send Feedback</button>
+            </form>
+            <div id="thankYouMessage" style="display: none;">
+                <p>Thank you for your feedback!</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <nav>
+            <h1>TM & © 2024 Warner Bros. Entertainment Inc. All rights reserved.</h1>
+            <div class="foot-links">
+                <ul>
+                    <li><a href="http://www.youtube.com/@WarnerBrosPictures"><img src="images/youtube.png" alt="YouTube Logo"></a></li>
+                    <li><a href="https://www.instagram.com/warnerbrosentertainment?igsh=N3V2bmpkMmhsNWV6"><img src="images/iglogo.png" alt="Instagram Logo"></a></li>
+                    <li><a href="https://www.facebook.com/WarnerBrosPictures"><img src="images/fblogo1.png" alt="Facebook Logo"></a></li>
+                    <li><a href="https://x.com/warnerbros/"><img src="images/xlogo.png" alt="X Logo"></a></li>
+                </ul>
+            </div>
+        </nav>
+    </footer>
+
+    <script>
+        function handleSubmit() {
+            // Hide the feedback form
+            document.getElementById('feedbackForm').style.display = 'none';
+            
+            // Display thank you message
+            document.getElementById('thankYouMessage').style.display = 'block';
+            
+            // Return false to prevent form submission
+            return false;
+        }
+    </script>
+</body>
+</html>
